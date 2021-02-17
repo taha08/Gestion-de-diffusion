@@ -12,7 +12,6 @@
 	// Add your code here, such as current.addQuery(field, value);
 	var msgs=[];
 	var listmsg= new GlideRecord("x_477420_gestion_d_message");
-	gs.info("rubrique"  +parent.getUniqueValue())
 	listmsg.addQuery("rubrique",parent.getUniqueValue());
 	listmsg.query();
 	while(listmsg.next())
@@ -22,7 +21,6 @@
 	current.addQuery("table_sys_id","IN",msgs.join());
 	current.addQuery("file_name","!=","collaborateurs.csv");
 	
-	gs.info("list attac "+msgs.join())
 
 })(current, parent);]]></query_with>
         <reference_field/>
@@ -32,14 +30,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-02-17 09:39:51</sys_created_on>
         <sys_id>52ee900b071220103a7afa7f7c1ed0bc</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Rubrique attachments list</sys_name>
         <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
         <sys_policy/>
         <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
         <sys_update_name>sys_relationship_52ee900b071220103a7afa7f7c1ed0bc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-02-17 10:00:20</sys_updated_on>
+        <sys_updated_on>2021-02-17 14:36:35</sys_updated_on>
     </sys_relationship>
     <sys_translated_text action="delete_multiple" query="documentkey=52ee900b071220103a7afa7f7c1ed0bc"/>
 </record_update>
