@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_date_visite" label="Date visite" language="en" table="x_477420_gestion_d_u_user_diffusion_log">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_date_visite</element>
+            <help/>
+            <hint/>
+            <label>Date visite</label>
+            <language>en</language>
+            <name>x_477420_gestion_d_u_user_diffusion_log</name>
+            <plural>Date visites</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-02-10 10:37:13</sys_created_on>
+            <sys_id>7829ec70075220103a7afa7f7c1ed061</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Date visite</sys_name>
+            <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+            <sys_update_name>sys_documentation_x_477420_gestion_d_u_user_diffusion_log_u_date_visite_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-02-10 10:37:13</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

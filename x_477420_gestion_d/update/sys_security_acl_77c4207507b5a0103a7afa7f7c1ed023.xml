@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Default access control on x_477420_gestion_d_message</description>
+        <name>x_477420_gestion_d_message</name>
+        <operation display_value="write">write</operation>
+        <script/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-19 16:20:50</sys_created_on>
+        <sys_id>77c4207507b5a0103a7afa7f7c1ed023</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_477420_gestion_d_message</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_update_name>sys_security_acl_77c4207507b5a0103a7afa7f7c1ed023</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-03 14:05:13</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

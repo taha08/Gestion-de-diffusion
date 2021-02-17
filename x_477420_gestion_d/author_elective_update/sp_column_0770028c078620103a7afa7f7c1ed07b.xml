@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="DELETE">
+        <class_name/>
+        <order>2</order>
+        <size>3</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">4770028c078620103a7afa7f7c1ed076</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-26 22:47:42</sys_created_on>
+        <sys_id>0770028c078620103a7afa7f7c1ed07b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_update_name>sp_column_0770028c078620103a7afa7f7c1ed07b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-26 22:47:42</sys_updated_on>
+    </sp_column>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</application>
+        <file_path/>
+        <instance_id>8fa5ee4ddb68f3400b9d21c405961914</instance_id>
+        <instance_name>dev78061</instance_name>
+        <name>sp_column_0770028c078620103a7afa7f7c1ed07b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><class_name/><order>2</order><size>3</size><size_lg/><size_sm/><size_xs/><sp_row display_value="1">4770028c078620103a7afa7f7c1ed076</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-01-26 22:47:42</sys_created_on><sys_id>0770028c078620103a7afa7f7c1ed07b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>2</sys_name><sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package><sys_policy/><sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope><sys_update_name>sp_column_0770028c078620103a7afa7f7c1ed07b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-01-26 22:47:42</sys_updated_on></sp_column></record_update>]]></payload>
+        <payload_hash>31970928</payload_hash>
+        <record_name>2</record_name>
+        <reverted_from/>
+        <source>66f9e06907f960103a7afa7f7c1ed08d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-26 22:47:42</sys_created_on>
+        <sys_id>8b70028c078620103a7afa7f7c1ed07c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17740e197550000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-26 22:47:42</sys_updated_on>
+        <type>Column</type>
+        <update_guid>8370028c2b862010f41aca59fd8b5d7c</update_guid>
+        <update_guid_history>8370028c2b862010f41aca59fd8b5d7c:31970928</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="2">072186cc078620103a7afa7f7c1ed090</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-26 22:50:42</sys_created_on>
+        <sys_db_object display_value="" name="sp_column">sp_column</sys_db_object>
+        <sys_id>093c84601a124062805d9f36a21e1809</sys_id>
+        <sys_metadata>0770028c078620103a7afa7f7c1ed07b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_scope_delete display_value="">16678e983ff0440898e20ea72589b090</sys_scope_delete>
+        <sys_update_name>sp_column_0770028c078620103a7afa7f7c1ed07b</sys_update_name>
+        <sys_update_version display_value="sp_column_0770028c078620103a7afa7f7c1ed07b">8b70028c078620103a7afa7f7c1ed07c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-26 22:50:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

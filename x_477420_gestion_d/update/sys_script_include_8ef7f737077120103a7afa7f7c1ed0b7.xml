@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_477420_gestion_d.addCollaborateurFromCsv</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>addCollaborateurFromCsv</name>
+        <script><![CDATA[var addCollaborateurFromCsv = Class.create();
+addCollaborateurFromCsv.prototype = {
+    initialize: function() {
+    },
+	
+	getContent: function(current)
+	 {
+		 gs.info('from si get content')
+			var gr = new GlideRecord('sys_attachment');
+			gr.addQuery('table_sys_id',current.sys_id);
+			gr.addQuery('file_name','collaborateurs.csv');
+			gr.query();
+   
+			if (gr.next())
+			   {
+				 var sa = new GlideSysAttachment();
+				 var listfromcsv = JSON.parse(JSON.stringify(sa.getContent(gr).split("\r\n")));
+			   	 return listfromcsv;
+			   }
+		    else {gs.info('nooot exist'); action.setRedirectURL(current);}
+	 },
+	
+	
+	
+	addUsers : function(listfromcsv)
+		{    
+			 
+			if(current.collaborateur !="")	{var listcollab = current.collaborateur.split(",");}
+	        else listcollab=[];
+			if(listfromcsv){
+			var arrayUtil = new global.ArrayUtil();
+
+					 for(i=1; i<listfromcsv.length-1 ; i++)
+						   {			 
+							   var gru= new GlideRecord("sys_user");
+							   var sys= gru.get("u_matricule",listfromcsv[i]);		   
+
+							   if(sys && !arrayUtil.contains(listcollab,gru.sys_id))
+							   listcollab.push(gru.sys_id);		   
+							}
+					return listcollab.join();}
+		},
+
+    type: 'addCollaborateurFromCsv'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-26 12:51:51</sys_created_on>
+        <sys_id>8ef7f737077120103a7afa7f7c1ed0b7</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>addCollaborateurFromCsv</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_update_name>sys_script_include_8ef7f737077120103a7afa7f7c1ed0b7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-26 14:21:49</sys_updated_on>
+    </sys_script_include>
+</record_update>

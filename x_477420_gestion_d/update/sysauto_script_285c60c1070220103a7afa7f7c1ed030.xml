@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <name>changé statut diffusion to publié</name>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2021-01-29 19:13:54</run_start>
+        <run_time>1970-01-01 00:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[var s=new GlideDate();
+var gr= new GlideRecord("x_477420_gestion_d_gestion_des_diffusions");
+gr.addEncodedQuery("date_et_heure_debut_de_publication<=javascript:gs.endOfToday()^date_et_heure_fin_de_publication>javascript:gs.endOfToday()");
+gr.query();
+
+//gs.log("my gr"+gr);
+gs.info("row count nooow "+gr.getRowCount());
+while(gr.next())
+    {
+        
+        gr.statut=2;
+	//	gr.setWorkflow(false);
+        gr.update(); 
+		
+    }]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-29 19:17:53</sys_created_on>
+        <sys_id>285c60c1070220103a7afa7f7c1ed030</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>changé statut diffusion to publié</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_update_name>sysauto_script_285c60c1070220103a7afa7f7c1ed030</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-29 19:17:53</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

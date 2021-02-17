@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[
+function($rootScope,$scope, spAriaUtil) {
+  /* widget controller */
+	//	$scope.accessibilityModeEnabled = spAriaUtil.isAccessibilityEnabled();
+      var c = this;
+	
+  $rootScope.$on('countEvent', function(event,ob) {
+		$scope.id=ob.id;
+  });
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  margin-top:2px;
+}
+
+.iconlink a label,h2 {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+div.iconlink {
+  word-break: break-word;
+ 
+}
+
+/* TOP ICON ---------- */
+
+a.top_icon {
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+
+a.top_icon .fa {
+  display: block;
+  text-align: center;
+}
+
+/* CIRCLE ICON ---------- */
+
+a.circle_icon {
+  display: block;
+  padding: 20px 0px 20px 70px;
+  position: relative;
+}
+
+a.circle_icon .fa {
+  position:absolute;
+  left: 0px;
+  top: 10px;
+}
+
+/* COLOR BOX ---------- */
+
+a.color_box {
+  display: block;
+  position: relative;
+  padding: 20px 20px 20px 82px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+a.color_box .fa {
+  position:absolute;
+  left: 20px;
+  top: 20px;
+  width:42px;
+  text-align: center;
+}
+
+.icon-link-background-primary {
+  background-color: $brand-primary;
+}
+
+.icon-link-background-info {
+  background-color: $brand-info;
+}
+
+.icon-link-background-success {
+  background-color: $brand-success;
+}
+
+.icon-link-background-warning {
+  background-color: $brand-warning;
+}
+
+.icon-link-background-danger {
+  background-color: $brand-danger;
+}
+
+.icon-link-background-default {
+  background-color: $brand-primary;
+}
+
+.text-primary {
+  color: $brand-primary;
+  
+  &amp;:hover {
+    color: darken($brand-primary, 20%);
+  }
+}
+
+.text-info {
+  color: $brand-info;
+  
+  &amp;:hover {
+    color: darken($brand-info, 20%);
+  }
+}
+
+.text-success {
+  color: $brand-success;
+  
+  &amp;:hover {
+    color: darken($brand-success, 20%);
+  }
+}
+
+.text-warning {
+  color: $brand-warning;
+  
+  &amp;:hover {
+    color: darken($brand-warning, 20%);
+  }
+}
+
+.text-danger {
+  color: $brand-danger;
+  
+  &amp;:hover {
+    color: darken($brand-danger, 20%);
+  }
+}
+
+.text-default {
+  color: $brand-primary;
+  
+  &amp;:hover {
+    color: darken($brand-primary, 20%);
+  }
+}
+
+.high-contrast {
+  .text-primary {
+    color: darken($brand-primary, 10%);
+  }
+
+  .text-info {
+    color: darken($brand-info, 10%);
+  }
+
+  .text-success {
+    color: darken($brand-success, 10%);
+  }
+
+  .text-warning {
+    color: darken($brand-warning, 10%);
+  }
+
+  .text-danger {
+    color: darken($brand-danger, 10%);
+  }
+
+  .text-default {
+    color: darken($brand-primary, 10%);
+  }
+}</css>
+        <data_table>sp_instance_link</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>type,url,sc_category,sc_cat_item,kb_topic,kb_article,kb_category,sp_page,title,short_description,color,class_name,glyph</field_list>
+        <has_preview>false</has_preview>
+        <id>icon_link_diffusion</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>icon link diffusion</name>
+        <option_schema>[{"name":"link_template","section":"Presentation","label":"Template","type":"choice","choices":[{"label":"Top Icon","value":"Top Icon"},{"label":"Circle Icon","value":"Circle Icon"},{"label":"Color Box","value":"Color Box"}]},{"displayValue":"Table","name":"table_to_query","section":"other","label":"Table to query","type":"reference","value":"sys_db_object","ed":{"reference":"sys_db_object"}},{"hint":"An encoded Query String, use the normal ServiceNow interface to filter the table, then right-click on the filter and select “Copy Query”","name":"encoded_query_string","section":"other","default_value":"active=true","label":"Encoded Query String","type":"string"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function(){
+	var gr = $sp.getInstanceRecord();
+	data.href = $sp.getMenuHREF(gr)+"&type="+options.encoded_query_string;
+	data.target = options.target || "";
+	data.message=gs.getMessage(options.title);
+	
+	
+	
+		var gr = new GlideRecord("x_477420_gestion_d_gestion_des_diffusions");
+	  gr.addEncodedQuery(options.encoded_query_string);
+	  gr.orderByDesc('sys_updated_on');
+	  gr.setLimit(1);
+    gr.query();
+	
+			if (gr.next()) {
+			      var difflog =new GlideRecord("x_477420_gestion_d_u_user_diffusion_log");
+						difflog.addQuery("u_diffusion_id",gr.getUniqueValue())
+				    difflog.addQuery("u_user_id",gs.getUserID());
+						difflog.addQuery("u_date_visite",">",gr.getValue('sys_updated_on'));
+				    difflog.query();
+gs.info("rbbbbbbw"+difflog.getRowCount())
+						if(difflog.next())
+						{
+								data.visit="true";
+							 gs.info("im in the first if  ")
+						}
+						
+		        else data.visit="false";
+				   gs.info("im in else "+gr.getValue('sys_updated_on'))
+					
+	
+				 }
+	
+	
+	
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-26 22:55:09</sys_created_on>
+        <sys_id>cc324e8c078620103a7afa7f7c1ed07e</sys_id>
+        <sys_mod_count>60</sys_mod_count>
+        <sys_name>icon link diffusion</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_update_name>sp_widget_cc324e8c078620103a7afa7f7c1ed07e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-15 15:37:36</sys_updated_on>
+        <template><![CDATA[<div class="iconlink mt-5 " ng-class="{'high-contrast': accessibilityModeEnabled}">
+
+  <!--// Color Box -->
+  <span class="badge" ng-if="data.visit=='false'">i</span>
+  
+  
+  <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white " target="{{::data.target}}">
+  <!--  <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div> -->    
+    <h2>{{c.data.message}}</h2>
+    
+  </a>
+</div>]]></template>
+    </sp_widget>
+</record_update>

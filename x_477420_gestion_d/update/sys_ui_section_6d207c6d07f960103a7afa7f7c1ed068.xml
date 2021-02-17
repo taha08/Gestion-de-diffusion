@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Priorités" section_id="6d207c6d07f960103a7afa7f7c1ed068" sys_domain="global" table="x_477420_gestion_d_gestion_des_diffusions" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>titre</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-21 15:06:07</sys_created_on>
+            <sys_id>30e66ed2073520103a7afa7f7c1ed0e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Priorités" display_value="Priorités" name="x_477420_gestion_d_gestion_des_diffusions" sys_domain="global" view="Default view">6d207c6d07f960103a7afa7f7c1ed068</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-21 15:06:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>titre_p1</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-21 15:06:07</sys_created_on>
+            <sys_id>b0e66ed2073520103a7afa7f7c1ed0e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Priorités" display_value="Priorités" name="x_477420_gestion_d_gestion_des_diffusions" sys_domain="global" view="Default view">6d207c6d07f960103a7afa7f7c1ed068</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-21 15:06:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>titre_p2</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-21 15:06:07</sys_created_on>
+            <sys_id>34e66ed2073520103a7afa7f7c1ed0e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Priorités" display_value="Priorités" name="x_477420_gestion_d_gestion_des_diffusions" sys_domain="global" view="Default view">6d207c6d07f960103a7afa7f7c1ed068</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-21 15:06:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>titre_p3</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-21 15:06:07</sys_created_on>
+            <sys_id>b4e66ed2073520103a7afa7f7c1ed0e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Priorités" display_value="Priorités" name="x_477420_gestion_d_gestion_des_diffusions" sys_domain="global" view="Default view">6d207c6d07f960103a7afa7f7c1ed068</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-21 15:06:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Priorités</caption>
+            <header>false</header>
+            <name>x_477420_gestion_d_gestion_des_diffusions</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-18 22:31:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6d207c6d07f960103a7afa7f7c1ed068</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Priorités</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+            <sys_update_name>sys_ui_section_6d207c6d07f960103a7afa7f7c1ed068</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-18 22:31:54</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

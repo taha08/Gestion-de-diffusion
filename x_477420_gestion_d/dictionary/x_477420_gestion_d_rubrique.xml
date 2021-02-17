@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Rubrique" max_length="40" name="x_477420_gestion_d_rubrique" sizeclass="4" type="collection">
+        <element label="Diffusion" max_length="32" name="diffusion" reference="x_477420_gestion_d_gestion_des_diffusions" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element choice="1" label="Order" mandatory="true" max_length="40" name="order" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="1" language="fr" value="1"/>
+                <element inactive_on_update="false" label="10" value="10"/>
+                <element inactive_on_update="false" label="11" value="11"/>
+                <element inactive_on_update="false" label="12" value="12"/>
+                <element inactive_on_update="false" label="2" value="2"/>
+                <element inactive_on_update="false" label="3" value="3"/>
+                <element inactive_on_update="false" label="4" value="4"/>
+                <element inactive_on_update="false" label="5" value="5"/>
+                <element inactive_on_update="false" label="6" value="6"/>
+                <element inactive_on_update="false" label="7" value="7"/>
+                <element inactive_on_update="false" label="8" value="8"/>
+                <element inactive_on_update="false" label="9" value="9"/>
+            </choice>
+        </element>
+        <element label="Titre" max_length="40" name="titre" type="string"/>
+        <index name="index">
+            <element name="diffusion"/>
+        </index>
+    </element>
+</database>

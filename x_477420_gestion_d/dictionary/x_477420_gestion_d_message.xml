@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Message" max_length="40" name="x_477420_gestion_d_message" sizeclass="11" type="collection">
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Canal" max_length="1024" name="canal" reference="sys_user_role" reference_qual="nameINx_477420_gestion_d.CS,x_477420_gestion_d.CM,x_477420_gestion_d.CA^EQ" reference_qual_condition="nameINx_477420_gestion_d.CS,x_477420_gestion_d.CM,x_477420_gestion_d.CA^EQ" type="glide_list"/>
+        <element label="Collaborateur" max_length="4000" name="collaborateur" reference="sys_user" type="glide_list"/>
+        <element choice="1" label="En savoir plus" max_length="40" name="en_savoir_plus" type="choice">
+            <choice/>
+        </element>
+        <element attributes="encode_utf8=false" label="Group" max_length="32" name="group" reference="sys_user_group" type="glide_list"/>
+        <element label="Html" max_length="8000" name="html" type="html"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Order" max_length="40" name="order" type="string">
+            <choice>
+                <element inactive_on_update="false" label="1" value="1"/>
+                <element inactive_on_update="false" label="10" value="10"/>
+                <element inactive_on_update="false" label="2" value="2"/>
+                <element inactive_on_update="false" label="3" value="3"/>
+                <element inactive_on_update="false" label="4" value="4"/>
+                <element inactive_on_update="false" label="5" value="5"/>
+                <element inactive_on_update="false" label="6" value="6"/>
+                <element inactive_on_update="false" label="7" value="7"/>
+                <element inactive_on_update="false" label="8" value="8"/>
+                <element inactive_on_update="false" label="9" value="9"/>
+            </choice>
+        </element>
+        <element label="Rubrique" max_length="32" name="rubrique" reference="x_477420_gestion_d_rubrique" type="reference"/>
+        <element label="Societé" max_length="4000" name="societe" reference="customer_account" type="glide_list"/>
+        <element label="Titre" max_length="40" name="titre" type="string"/>
+        <index name="index">
+            <element name="rubrique"/>
+        </index>
+        <index name="index2">
+            <element name="group"/>
+        </index>
+    </element>
+</database>

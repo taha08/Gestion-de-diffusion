@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_link">
+    <sp_instance_link action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <order>1</order>
+        <roles/>
+        <sc_cat_item/>
+        <sc_category/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">02510acc078620103a7afa7f7c1ed0d8</sp_column>
+        <sp_page display_value="icon_link_diffusion">8032420007c620103a7afa7f7c1ed0c8</sp_page>
+        <sp_widget display_value="icon link diffusion">cc324e8c078620103a7afa7f7c1ed07e</sp_widget>
+        <sys_class_name>sp_instance_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-26 22:56:09</sys_created_on>
+        <sys_id>c76242cc078620103a7afa7f7c1ed048</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>ACTU CO</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_update_name>sp_instance_link_c76242cc078620103a7afa7f7c1ed048</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-27 13:20:31</sys_updated_on>
+        <title>ACTU CO</title>
+        <type>page</type>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"link_template": {
+		"value": "Color Box",
+		"displayValue": "Color Box"
+	},
+	"table_to_query": {
+		"value": "f5ea6c6907f960103a7afa7f7c1ed03e",
+		"displayValue": "Diffusions"
+	},
+	"encoded_query_string": {
+		"value": "statut=2^type_de_diffusion=2",
+		"displayValue": "statut=2^type_de_diffusion=2"
+	}
+}]]></widget_parameters>
+    </sp_instance_link>
+    <sys_translated_text action="delete_multiple" query="documentkey=c76242cc078620103a7afa7f7c1ed048"/>
+</record_update>

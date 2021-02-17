@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-19 16:20:50</sys_created_on>
+        <sys_id>33c4207507b5a0103a7afa7f7c1ed030</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_477420_gestion_d_message.x_477420_gestion_d.message_user</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_security_acl display_value="x_477420_gestion_d_message">3fc4207507b5a0103a7afa7f7c1ed02b</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_33c4207507b5a0103a7afa7f7c1ed030</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-19 16:20:50</sys_updated_on>
+        <sys_user_role display_value="x_477420_gestion_d.message_user" name="x_477420_gestion_d.message_user">5bc4e8b107b5a0103a7afa7f7c1ed0c8</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</application>
+        <file_path/>
+        <instance_id>8fa5ee4ddb68f3400b9d21c405961914</instance_id>
+        <instance_name>dev78061</instance_name>
+        <name>sys_security_acl_role_33c4207507b5a0103a7afa7f7c1ed030</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-01-19 16:20:50</sys_created_on><sys_id>33c4207507b5a0103a7afa7f7c1ed030</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_477420_gestion_d_message.x_477420_gestion_d.message_user</sys_name><sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package><sys_policy/><sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope><sys_security_acl display_value="x_477420_gestion_d_message">3fc4207507b5a0103a7afa7f7c1ed02b</sys_security_acl><sys_update_name>sys_security_acl_role_33c4207507b5a0103a7afa7f7c1ed030</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-01-19 16:20:50</sys_updated_on><sys_user_role display_value="x_477420_gestion_d.message_user" name="x_477420_gestion_d.message_user">5bc4e8b107b5a0103a7afa7f7c1ed0c8</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>436657611</payload_hash>
+        <record_name>x_477420_gestion_d_message.x_477420_gestion_d.message_user</record_name>
+        <reverted_from/>
+        <source>66f9e06907f960103a7afa7f7c1ed08d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-19 16:20:50</sys_created_on>
+        <sys_id>3fc4207507b5a0103a7afa7f7c1ed033</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1771b72e3e20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-19 16:20:50</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>37c4207543b5a010b598df3597e3bd33</update_guid>
+        <update_guid_history>37c4207543b5a010b598df3597e3bd33:436657611</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_477420_gestion_d_message.x_477420_gestion_d.message_user">91bed522070620103a7afa7f7c1ed0a5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-03 14:44:56</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>0298c284f7b141dca059d53d49682921</sys_id>
+        <sys_metadata>33c4207507b5a0103a7afa7f7c1ed030</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_477420_gestion_d_message.x_477420_gestion_d.message_user</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_parent display_value="x_477420_gestion_d_message">3fc4207507b5a0103a7afa7f7c1ed02b</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_scope_delete display_value="">16678e983ff0440898e20ea72589b090</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_33c4207507b5a0103a7afa7f7c1ed030</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_33c4207507b5a0103a7afa7f7c1ed030">3fc4207507b5a0103a7afa7f7c1ed033</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-03 14:44:56</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

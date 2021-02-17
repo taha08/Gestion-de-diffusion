@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="Diffusions" max_length="40" name="x_477420_gestion_d_gestion_des_diffusions" sizeclass="5" type="collection">
+        <element label="Date et heure début de publication" max_length="40" name="date_et_heure_debut_de_publication" type="glide_date_time"/>
+        <element label="Date et heure fin de publication" max_length="40" name="date_et_heure_fin_de_publication" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Image" max_length="1024" name="image" type="user_image"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element choice="3" default="1" label="Statut" mandatory="true" max_length="40" name="statut" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Archivé" value="4"/>
+                <element inactive_on_update="false" label="Brouillon" value="1"/>
+                <element inactive_on_update="false" label="Programmé" value="3"/>
+                <element inactive_on_update="false" label="Publié" value="2"/>
+            </choice>
+        </element>
+        <element label="Titre section" max_length="40" name="titre" type="string"/>
+        <element label="Titre priorité1" max_length="40" name="titre_p1" type="string"/>
+        <element label="Titre priorité2" max_length="40" name="titre_p2" type="string"/>
+        <element label="Titre priorité3" max_length="40" name="titre_p3" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="2" label="Type de diffusion" mandatory="true" max_length="40" name="type_de_diffusion" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="ACTU CO" sequence="0" value="2"/>
+                <element inactive_on_update="false" label="ACTIONS CO" sequence="1" value="1"/>
+            </choice>
+        </element>
+        <element label="visité" max_length="40" name="visit" read_only="true" type="boolean"/>
+    </element>
+</database>

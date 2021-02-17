@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[
+function($scope,$sce,$window) {	
+ var c = this;
+      
+	//console.log("$window",$window)
+//	$window.localStorage.setItem('myCat', 'Tom');
+
+	  $scope.rubriq=c.data.table.rubriques;
+	    for(var rubb in $scope.rubriq )
+				{
+					
+				//	alert( $scope.rubriq[rubb].titre);
+				
+					for(var value in $scope.rubriq[rubb].msg)
+						{	
+							
+						var s=	$scope.rubriq[rubb].msg[value].html;
+		        $scope.rubriq[rubb].msg[value].html=$sce.trustAsHtml(s);
+						}
+				}   
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.scrollable {
+  width:100%;
+  max-height:120px;
+  overflow:auto   
+}
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.btnn{
+  padding: 12px 17px !important ;
+  font-size: 20px !important;
+   background-color: DodgerBlue;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+.listfile{  display: inline-block;     margin-left: 5px;}
+
+.date {
+  text-align:center ;
+  font-family:system-ui;
+  margin-left: -32px;
+}
+
+.titre {
+  
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center ;
+
+    font-family:verdana;
+     }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height:256px;
+  text-align:center ;
+  font-family:verdana;
+     }
+.titrep{
+   
+   text-align:center ;
+   font-family:verdana;
+}
+.type{text-align:center  ;margin-right:44px; font-family:system-ui;}
+
+.rubrique{background-color: #cccaea;padding: 17px 42px 8px 32px;margin-bottom:10px;border-radius: 8px;}
+
+.line{background-color:white;}
+
+.border{padding:5PX 5PX 5PX 5PX;background-color:bleu;}
+
+.right{text-align:right;}
+.left{text-align:left;}
+.html{
+   text-align:center;
+  word-break: break-word;
+   max-width: 132px;
+  
+}
+th{    background-color: navajowhite;}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>last_diffusion_action_co</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>last_diffusion_action_co</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[
+(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+ // var sp = $sp.getInstanceRecord();	
+	data.table = {
+		"name"   :  options.table_name ||'x_477420_gestion_d_gestion_des_diffusions',
+		"type": $sp.getParameter("type"),
+		"rubriques":[],
+    "messages":[]
+	};
+	
+	
+	var gr = new GlideRecord(data.table.name);
+	gr.addEncodedQuery(data.table.type);
+	gr.orderByDesc('sys_updated_on');
+	gr.setLimit(1);
+	gr.query();
+	
+	
+	data.row=gr.getRowCount();	
+			if (gr.next()) {
+		
+				var diffusion = {};
+					
+				for( var i in gr) diffusion[i]=gr.getDisplayValue(i);
+					 data.obj=diffusion;
+				
+								//check si la diffusion visité 
+				        var difflog =new GlideRecord("x_477420_gestion_d_u_user_diffusion_log");
+											difflog.initialize();
+											difflog.setValue("u_diffusion_id",gr.getUniqueValue());
+											difflog.setValue("u_user_id",gs.getUserID());
+									    difflog.setValue("u_date_visite",new GlideDateTime());
+											var s=difflog.insert();
+													
+				 }
+	
+	// recuperer les rubriques
+	var rub=new GlideRecord("x_477420_gestion_d_rubrique");
+  rub.addQuery("diffusion",gr.getUniqueValue());
+	rub.query();
+	
+	while(rub.next())
+		{
+			var objrub={};
+		
+			  objrub.titre=rub.getValue("titre");
+		    objrub.order=parseInt(rub.getDisplayValue("order"));
+			
+			//recuperer les messages
+				var msg=new GlideRecordSecure("x_477420_gestion_d_message");
+			  msg.addQuery("rubrique",rub.getUniqueValue());	    
+				msg.query();
+			
+						while(msg.next())
+							{
+							
+									var objmsg={};
+								  var list_atach=[];
+								  	objmsg.titre=msg.getValue("titre");
+								  	objmsg.html=msg.getValue("html");
+								    objmsg.order=msg.getDisplayValue("order");
+												var attachment = new GlideSysAttachment();
+												var allattach = attachment.getAttachments('x_477420_gestion_d_message', msg.getUniqueValue());
+												while(allattach.next())
+													{
+														if(allattach.getValue('file_name')!="collaborateurs.csv")
+															 {
+														var objattach={};
+														objattach.filetype=allattach.getValue('content_type');
+														objattach.filename=allattach.getValue('file_name');
+														var filextension=objattach.filename.split('.');
+
+														var geticon=new GlideRecord("sys_attachment_icon_rule");
+																geticon.addQuery('file_format_indicator','CONTAINS',filextension[1]);	 
+																geticon.query();
+
+														if(geticon.next()) objattach.icon=geticon.getValue("icon");	 
+														objattach.url="/sys_attachment.do?sys_id="+ allattach.sys_id;
+														list_atach.push(objattach);
+													}
+													}
+												objmsg.files=list_atach;
+								
+								
+								
+								data.table.messages.push(objmsg);
+								
+								}
+
+							 objrub.msg=data.table.messages;
+							 data.table.rubriques.push(objrub);
+							 data.table.messages=[]; 
+			
+		}
+	
+	
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-27 08:53:25</sys_created_on>
+        <sys_id>f31b8cd0070220103a7afa7f7c1ed009</sys_id>
+        <sys_mod_count>761</sys_mod_count>
+        <sys_name>last_diffusion_action_co</sys_name>
+        <sys_package display_value="Gestion des diffusions" source="x_477420_gestion_d">6af9a821077960103a7afa7f7c1ed02b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Gestion des diffusions">6af9a821077960103a7afa7f7c1ed02b</sys_scope>
+        <sys_update_name>sp_widget_f31b8cd0070220103a7afa7f7c1ed009</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-16 12:32:11</sys_updated_on>
+        <template><![CDATA[<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+      <div class="row">
+          <div class="col-md-6">
+            <h3 class="type" ng_if="data.obj.type!=null">  {{data.obj.type}}   </h3>
+          </div>
+          <div class="col-md-6">
+          <h3 class="date" ng_if="data.obj.date!=null" >  {{data.obj.date}}   </h3>
+          </div>
+     </div>
+     <div class="row">
+          <div>
+                 <img ng_if="data.obj.image!=null" class="center" src="{{data.obj.image}}" alt="{{data.obj.image}} height="100PX" width="800px" > 
+          </div> 
+      </div>
+     <div class="row">
+       <div>
+            <h2 ng_if="data.obj.titre!=null"class="titre"> {{data.obj.titre}}</h2>
+       </div> 
+      </div>
+   
+  <div class="row">
+    <div class="col-sm-4">
+      <h4 ng_if="data.obj.titre_p1!=null" class="titrep right "> 01 <br>  {{data.obj.titre_p1}} </h4>
+    </div>
+    <div class="col-sm-4">
+      <h4 ng_if="data.obj.titre_p2!=null" class="titrep "> 02 <br>  {{data.obj.titre_p2}} </h4>
+    </div>
+    <div class="col-sm-4">
+      <h4 ng_if="data.obj.titre_p3!=null" class="titrep left">03 <br>{{data.obj.titre_p3}}</h4>
+    </div>
+</div>
+<div class="rubrique" ng_if="data.table.rubriques.length!=0" >                                                         
+ <table class="table"  ng-repeat=" rub in rubriq | orderBy:'-order'">
+   <tr class="border"><th> <h3 class="label label-warning" style="color:black;">{{rub.titre}} </h3></th> </tr>
+                                                                        
+                            
+          <tr class="line"  ng-repeat="value in rub.msg | orderBy:'-order' ">
+             <td >  <b class="label label-info" style="color:black;"> {{value.titre}} </b></td> 
+                        
+        <td class="html" ><div ng-bind-html="value.html" class="scrollable"></div> </td> 
+        <td class="titrep"> 
+               <ul class='listfile'> 
+                <li class='listfile titrep' ng-repeat="file in value.files" >  
+                  <p><a href="{{file.url}}" title="{{file.filename}}"> <img src="{{file.icon}}" alt="file not exist" width='24px' height='25px'> </a></p>
+                  </li>                                    
+               </ul> 
+            </td>
+                                                                  
+        </tr>
+                                    
+   
+ 
+ </table> 
+                                                   
+                                                       
+                             
+ </div>                                                                                                     
+                                                             
+       <pre>{{rubriq | json }} </pre>  <!--     <pre>{{::aze}} </pre>
+                                     <pre>{{data.table.rubriques[1] | json }} </pre> 
+                                                           <pre>{{data.table.rubriques[0] | json }} </pre> -->
+                                                             
+          
+
+                                                       
+                                               ]]></template>
+    </sp_widget>
+</record_update>

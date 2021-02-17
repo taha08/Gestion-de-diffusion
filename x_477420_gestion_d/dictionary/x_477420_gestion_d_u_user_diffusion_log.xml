@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="u user diffusion log" max_length="40" name="x_477420_gestion_d_u_user_diffusion_log" sizeclass="12" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Date visite" max_length="40" name="u_date_visite" type="glide_date_time"/>
+        <element label="Diffusion ID" max_length="32" name="u_diffusion_id" reference="x_477420_gestion_d_gestion_des_diffusions" type="reference"/>
+        <element label="User ID" max_length="32" name="u_user_id" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="u_user_id"/>
+        </index>
+        <index name="index2">
+            <element name="u_diffusion_id"/>
+        </index>
+    </element>
+</database>
